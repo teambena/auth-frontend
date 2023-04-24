@@ -1,7 +1,30 @@
 <template>
     <q-layout view="hHh LpR lfr">
         <template v-if="$auth.isLoggedIn">
+            <!-- App header -->
+            <q-header elevated>
+                <q-toolbar class="glossy">
+                    <q-btn-dropdown
+                        no-caps
+                        stretch
+                        unelevated
+                        icon="account_circle"
+                    >
+                        <q-list dense style="min-width: 200px">
+                            <q-item clickable v-ripple @click="startLogout()">
+                                <q-item-section avatar>
+                                    <q-avatar icon="exit_to_app"></q-avatar>
+                                </q-item-section>
+                                <q-item-section>
+                                    <q-item-label>Logout</q-item-label>
+                                </q-item-section>
+                            </q-item>
+                        </q-list>
+                    </q-btn-dropdown>
+                </q-toolbar>
+            </q-header>
         </template>
+
         <template v-else>
             <q-header elevated>
                 <q-toolbar class="glossy"> </q-toolbar>
