@@ -73,7 +73,7 @@
     </main>
 </template>
 <script setup>
-	import {  computed, reactive, toRefs } from 'vue';
+	import { computed, reactive, toRefs } from 'vue';
 	import { required, } from 'src/services/validators';
 	import { useMeta } from 'quasar';
 	import { useApp } from 'src/composables/app';

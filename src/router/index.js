@@ -22,7 +22,7 @@ let routes = [{
 		{ path: '/index/register', name: 'useruserregister', component: () => import('pages/index/userregister.vue'), props: true },
 		{ path: '/account/edit', name: 'useraccountedit', component: () => import('pages/account/accountedit.vue'), props: true },
 		{ path: '/account', name: 'useraccountview', component: () => import('pages/account/accountview.vue'), props: true },
-
+        { path: '/account/resetpassword', name: 'resetpassword', component: () => import('src/pages/account/resetpassword.vue'), props: true },
 	],
 
 	},
