@@ -44,8 +44,8 @@ export function useAuth() {
         return store.login(payload);
     }
 
-    function saveLoginData(loginData, rememberUser) {
-        const payload = { loginData, rememberUser };
+    function saveLoginData(loginData) {
+        const payload = { loginData };
         store.saveLoginData(payload);
     }
 

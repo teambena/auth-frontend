@@ -25,10 +25,10 @@ export const useAuthStore = defineStore("auth", () => {
 
     async function login(args) {
         try {
-            const { url, formData, rememberUser } = args;
+            const { url, formData } = args;
             const response = await ApiService.post(url, formData);
             const loginData = response.data;
-            saveLoginData({ loginData, rememberUser });
+            saveLoginData({ loginData });
             return loginData;
         } catch (err) {
             throw err;
@@ -36,9 +36,9 @@ export const useAuthStore = defineStore("auth", () => {
     }
 
     async function saveLoginData(args) {
-        const { loginData, rememberUser } = args;
+        const { loginData } = args;
         if (loginData?.token) {
-            StorageService.saveLoginData(loginData, rememberUser);
+            StorageService.saveLoginData(loginData);
         }
     }
 
