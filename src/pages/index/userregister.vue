@@ -144,7 +144,7 @@
 </template>
 <script setup>
 	import {  computed, ref, reactive, toRefs } from 'vue';
-	import { required, sameAs, minLength, maxLength, regex} from 'src/services/validators';
+	import { required, sameAs, minLength, maxLength, regex, noSequence} from 'src/services/validators';
 	import { usePageStore } from 'src/stores/page';
 	import { useMeta } from 'quasar';
 	import { useApp } from 'src/composables/app';
@@ -231,9 +231,9 @@
 	//vuelidate form validation rules
 	const rules = computed(() => {
 		return {
-			username: { required, minLength: minLength(4), maxLength: maxLength(16), regex: regex(/^[A-Za-z0-9_]+$/), },
+			username: { required, minLength: minLength(4), maxLength: maxLength(12), regex: regex(/^[A-Za-z0-9_]+$/) },
 		    firstname: { required },
-		    password: { required },
+		    password: { required, minLength: minLength(6), noSequence: noSequence(/^(?!.*(012|123|234|345|456|567|678|789|890|987|876|765|654|543|432|321|210|abc|bcd|cde|def|efg|fgh|ghi|hij|ijk|jkl|klm|lmn|mno|nop|opq|pqr|qrs|rst|stu|tuv|uvw|vwx|wxy|xyz|zyx)).*$/) },
 		    confirm_password: {required, sameAs: sameAs(formData.password, 'Password') },
 		    profile_image: { required }
 		}

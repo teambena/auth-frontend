@@ -12,5 +12,6 @@ export const minValue = withI18nMessage(validators.minValue, { withArguments: tr
 export const maxValue = withI18nMessage(validators.maxValue, { withArguments: true });
 export const sameAs = withI18nMessage(validators.sameAs, { withArguments: true });
 export const regex = withI18nMessage(validators.helpers.regex, { withArguments: true });
+export const noSequence = withI18nMessage(validators.helpers.regex, { withArguments: true });
 
 export const helpers = validators.helpers;
