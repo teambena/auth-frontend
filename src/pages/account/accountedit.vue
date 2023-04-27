@@ -164,7 +164,8 @@
 	//vuelidate form validation rules
 	const rules = computed(() => {
 		return {
-			firstname: { required },
+			firstname: { required, maxLength: maxLength(60) },
+            lastname: { maxLength: maxLength(60)},
 		    profile_image: { required }
 		}
 	});

@@ -232,7 +232,8 @@
 	const rules = computed(() => {
 		return {
 			username: { required, minLength: minLength(4), maxLength: maxLength(12), regex: regex(/^[A-Za-z0-9_]+$/) },
-		    firstname: { required },
+		    firstname: { required, maxLength: maxLength(60) },
+            lastname: { maxLength: maxLength(60) },
 		    password: { required, minLength: minLength(6), noSequence: noSequence(/^(?!.*(012|123|234|345|456|567|678|789|890|987|876|765|654|543|432|321|210|abc|bcd|cde|def|efg|fgh|ghi|hij|ijk|jkl|klm|lmn|mno|nop|opq|pqr|qrs|rst|stu|tuv|uvw|vwx|wxy|xyz|zyx)).*$/) },
 		    confirm_password: {required, sameAs: sameAs(formData.password, 'Password') },
 		    profile_image: { required }
