@@ -1,0 +1,15 @@
+version: '3'
+services:
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "8050:8050"
+  backend:
+    build:
+      context: ./python-flask-api
+      dockerfile: Dockerfile
+    ports:
+      - "8060:8060"
+    container_name: backend
